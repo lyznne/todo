@@ -1,0 +1,46 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+
+# Database files
+*.sqlite3
+*.db
+
+# Log files
+*.log
+
+# Media files
+media/
+
+# Static files (usually collected into a single directory)
+# static/
+
+# Secret key file (keep this file secret)
+secret_key.txt
+
+# Configuration files
+*.ini
+
+# Virtual environment
+venv/
+.env
+
+# Site-specific settings (e.g., settings_local.py)
+settings_local.py
+
+# Compiled translations
+locale/
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Compiled JavaScript files
+node_modules/
