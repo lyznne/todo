@@ -4,4 +4,10 @@ from django.shortcuts import render
 
 def index_view(response):
     
-    return render(response, "core/index.html")
+    return render(response, "core/index.html") 
+
+def signup_view(response): 
+    return render(response, 'core/signup.html')
+
+def signin_view(response): 
+    return render(response, 'core/signin.html')

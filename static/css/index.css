@@ -1,0 +1,96 @@
+/* fonts `poppins` && `montserrat  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset CSS */
+/* =============================================================================
+   A simple CSS reset for better cross-browser consistency and default styling.
+   ========================================================================== */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Remove list styles (bullets/numbers) */
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+/* Remove borders and paddings from images */
+img {
+    border: 0;
+    padding: 0;
+}
+
+/* Remove default input styles */
+input,
+button,
+textarea,
+select {
+    border: none;
+    outline: none;
+}
+
+/* Correct typographic defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+button {
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder ,
+:-ms-input-placeholder,
+::placeholder {
+    color: #ffffffb9;
+
+}
+
+/* ================================
+    global css && utility classes.
+   =================================*/
+
+body {
+    background: #080916;
+}
+
+header {
+    background: radial-gradient(27.05% 32.66% at 49.24% 0.54%, #1A1E60 0%, #0D0F2B 52.17%, rgba(8, 9, 22, 0.97) 99.48%);
+    min-height: 90dvh;
+    overflow: hidden;
+
+}
+
+
+/* utility classes  */
+:root {
+
+}
+
+.gradient-text {
+    background: radial-gradient(circle farthest-corner at center center,
+    #ffffff,
+    #ffee04);
+   font-family: 'Montserrat', sans-serif;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
