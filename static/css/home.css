@@ -125,6 +125,7 @@
     align-items: start;
     flex-direction: column;
     gap: 10px;
+    /* display: none; */
 
 }
 
@@ -136,6 +137,12 @@
 .top .top-container .user .notification-content a:hover {
     text-decoration: dotted;
     color: #FFF;
+}
+
+.top .top-container .user .notification-content>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .top .top-container .user .profile {
@@ -150,3 +157,133 @@
     align-items: center;
     justify-content: center;
 }
+
+
+main {
+    background: radial-gradient(27.05% 32.66% at 49.24% 0.54%, #1A1E60 0%, #0D0F2B 52.17%, rgba(8, 9, 22, 0.97) 99.48%);
+    padding: 1rem 2rem;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+}
+
+.aside {
+    position: fixed;
+    left: 0;
+    top: 15%;
+    backdrop-filter: blur(20px);
+    background: #080916e1;
+    border-right: 2px solid #b9b1ff1c;
+    height: 89%;
+    /* width: 400px; */
+}
+
+.aside .aside-component {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    height: 100%;
+}
+
+.aside .aside-component .top-aside {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.aside .aside-component .home,
+.tasks,
+.add-task,
+.settings {
+    display: flex;
+    align-items: center;
+
+}
+
+.aside .aside-component .aside-box,
+.menu {
+    padding: 6px 1rem;
+}
+
+.aside .aside-component .aside-box:hover {
+    background: #0a0b2554;
+}
+
+.aside .aside-component .aside-link {
+    margin-left: 10px;
+    font-size: 17px;
+    line-height: 26px;
+    color: rgba(225, 224, 255, 0.83);
+    text-transform: capitalize;
+}
+
+/* task css styling  */
+.task-container {
+    color: #E1E0FF;
+    margin-top: 5rem;
+    margin-left: 200px;
+    width: 100%;
+    padding: 10px 16px;
+}
+
+.task-container .user-greeting,
+.task-complete,
+.all-task,
+.menu-icon {
+    display: flex;
+    align-items: center;
+
+}
+
+.task-container .user-greeting .boxy {
+    outline: 3px solid #0193d6;
+    height: 35px;
+    width: 35px;
+    border-radius: 24% 5%;
+    margin-right: 16px;
+}
+
+.task-container .user-greeting h2 {
+    font-size: 18px;
+    color: #E1E0FF;
+}
+
+.task-container .user-greeting .username span {
+    font-weight: 500;
+    letter-spacing: .3px;
+}
+
+.task-container .user-greeting .username p {
+    font-size: 16px;
+    color: #ffffffb9;
+}
+
+.task-container .task-components {
+    background: radial-gradient(27.05% 70.66% at 80.24% .54%, #1A1E60 0%, #0D0F2B 52.17%, rgba(8, 9, 22, 0.97) 99.48%);
+
+}
+
+.task-container .user-component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+}
+
+.task-container .user-component  .complete-boxy {
+    background: cadetblue;
+    height: 25px;
+    width: 25px;
+    border-radius: 24% 5%;
+    margin-right: 16px;
+    color: #E1E0FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
