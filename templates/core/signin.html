@@ -11,9 +11,13 @@
                 <img src="{% static '/assets/images/bg.jpg' %}" alt="">
             </div>
             <div class="form">
+                <div class="messages-error" style="display: none;"></div>
+                {% include 'partials/messages.html' %}
+                
                 <h3>Hi,  welcome back</h3>
                 <h1>let's get you signin </h1>
-                <form action="{% url 'signup' %}" method="post">
+                <form action="{% url 'signin' %}" method="post">
+                    
                     {% csrf_token %}
                     <div class="input-field">
                         <input type="text" name="username" placeholder="username" required>
