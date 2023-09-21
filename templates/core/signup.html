@@ -12,7 +12,8 @@
             </div>
             <div class="form">
                 <div class="messages-error" style="display: none;"></div>
-
+                {% include 'partials/messages.html' %}
+                
                 <h3>one step to go </h3>
                 <h1>let's create your account</h1>
                 <form action="{% url 'signup' %}" method="post" id="form">

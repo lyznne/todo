@@ -51,6 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'todo.urls'
+LOGIN_URL = '/auth/signin/'
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
