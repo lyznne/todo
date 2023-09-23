@@ -120,3 +120,13 @@ header {
     filter: blur(300px);
     z-index: 0;
 }
+
+.circle {
+    place-self: flex-end;
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #0193d6;
+
+}

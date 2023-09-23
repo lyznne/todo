@@ -48,3 +48,6 @@ def signin_view(request):
 @login_required 
 def home_view(request):
     return render(request, 'core/home.html')
+
+def profile_view(request):
+    return render(request, 'core/profile.html')

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'partials/aside.html' %}
+
+<style>
+    .aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px; /* Adjust the width as needed */
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    background: #080916e1;
+    border-right: 2px solid #b9b1ff1c;
+   
+}
+
+/* Style for menu item icons and text */
+.aside-box {
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    transition: background 0.2s ease;
+}
+
+/* Active menu item styles */
+.aside-box.active {
+    background: #0a0b2554;
+}
+
+/* Icon and text styles */
+.aside-box a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(225, 224, 255, 0.83);
+}
+
+.aside-box a svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .aside {
+        width: 60px; /* Adjust the collapsed width */
+    }
+
+    /* Hide text when collapsed */
+    .aside-box span {
+        display: none;
+    }
+
+    /* Adjust padding for the menu icon */
+    .menu {
+        padding: 6px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('.menu');
+    const asideBoxes = document.querySelectorAll('.aside-box');
+
+    // Toggle the aside width when clicking the menu icon
+    menu.addEventListener('click', () => {
+        const aside = document.querySelector('.aside');
+        aside.classList.toggle('collapsed');
+    });
+
+    // Highlight the active menu item based on the current URL
+    asideBoxes.forEach((box) => {
+        const link = box.querySelector('a');
+        const url = link.getAttribute('href');
+        if (window.location.pathname === url) {
+            box.classList.add('active');
+        }
+    });
+});
+
+</script>
+{% endblock content %}
