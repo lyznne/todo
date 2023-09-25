@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const notificationBtn = document.getElementById('notification-icon');
     const menu = document.querySelector('.menu');
     const asideBoxes = document.querySelectorAll('.aside-link');
+    const addEmailButton = document.getElementById("add-email");
+    const addEmailInput = document.getElementById("email-input-field");
+    let addEmailInputVisible = false;
+
 
     let notificationVisible = false;
 
@@ -58,9 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function showEmailInputField() {
+        addEmailInputVisible = !addEmailInputVisible;
+        if (addEmailInputVisible) {
+            addEmailInput.style.display = 'block';
+        } else {
+            addEmailInput.style.display = 'none';
+
+        }
+
+
+    }
+
+    addEmailButton.addEventListener('click', showEmailInputField);
     menu.addEventListener('click', toggleCollapsedAsideMenu);
-
-
     toggleBackspaceIcon();
     menu.addEventListener('click', toggleCollapsedAsideMenu);
     searchInput.addEventListener('input', toggleBackspaceIcon);
