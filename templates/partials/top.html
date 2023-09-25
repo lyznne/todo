@@ -8,7 +8,7 @@
         <div class="search">
             <form action="#">
                 <div class="search-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25" fill="none">
                         <path
                             d="M11.1314 19.3323C15.5497 19.3323 19.1314 15.7506 19.1314 11.3323C19.1314 6.914 15.5497 3.33228 11.1314 3.33228C6.7131 3.33228 3.13138 6.914 3.13138 11.3323C3.13138 15.7506 6.7131 19.3323 11.1314 19.3323Z"
                             stroke="white" stroke-opacity="0.49" stroke-width="2" stroke-linecap="round"
@@ -17,8 +17,8 @@
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <input type="text" placeholder="acces your tasks .." name="search">
-                <div class="close">
+                <input type="text" placeholder="acces your tasks ... " name="search" id="search-input">
+                <div class="close" id="backspace-search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path
                             d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
@@ -35,25 +35,28 @@
         </div>
         <div class="user">
             <div class="notifications">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z"
-                        stroke="#E1E0FF" stroke-opacity="0.83" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path
-                        d="M13.73 21C13.5542 21.3031 13.3018 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6981 21.5547 10.4458 21.3031 10.27 21"
-                        stroke="#E1E0FF" stroke-opacity="0.83" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+                <div class="notification-icon" id="notification-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z"
+                            stroke="#E1E0FF" stroke-opacity="0.83" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M13.73 21C13.5542 21.3031 13.3018 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6981 21.5547 10.4458 21.3031 10.27 21"
+                            stroke="#E1E0FF" stroke-opacity="0.83" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
                 <span></span>
-                <div class="notification-content">
-                    <div >
-                        <a href="#">
+                <div class="notification-content" id="notification-content">
+                    <div>
+                        <a href="{% url 'profile' %}">
                             <p>let's finish setting up your profile info</p>
-                            
+
                         </a>
                         <div class="close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none">
                                 <path
                                     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                                     stroke="#FF7676" stroke-opacity="0.79" stroke-width="2" stroke-linecap="round"
@@ -66,12 +69,13 @@
                         </div>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="{% url 'profile' %}">
                             <p>let's finish setting up your profile info</p>
-                            
+
                         </a>
                         <div class="close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none">
                                 <path
                                     d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                                     stroke="#FF7676" stroke-opacity="0.79" stroke-width="2" stroke-linecap="round"
@@ -83,7 +87,7 @@
                             </svg>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="user-info">
@@ -94,9 +98,16 @@
                             fill="#E1E0FF" fill-opacity="0.83" />
                     </svg>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="user-details">
-                    <p>{{ username }}</p>
+                    <div class="user">
+                        <a href="{% url 'profile' %}">
+                            <p>{{ user.username }} <span>(you)</span></p>
+                        </a>
+                    </div>
                 </div>
+                {% endif %}
+
             </div>
         </div>
     </div>

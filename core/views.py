@@ -1,6 +1,7 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import User, Category, Task
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -48,3 +49,20 @@ def signin_view(request):
 @login_required 
 def home_view(request):
     return render(request, 'core/home.html')
+
+@login_required
+def profile_view(request):
+    return render(request, 'core/profile.html')
+
+@login_required 
+def create_task_view(request):
+    return render(request, 'core/task.html') 
+
+
+# @login_required
+def signout_view(request):
+    logout(request)
+    return render(request, 'core/signout.html')
+
+def custom_404(request, exception):
+    return render(request, 'core/404.html', status=404)

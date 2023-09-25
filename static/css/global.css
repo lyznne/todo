@@ -1,0 +1,23 @@
+
+/* ================================
+    global css 
+   =================================*/
+
+   body {
+    background: #080916;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: radial-gradient(27.05% 32.66% at 49.24% 0.54%, #1A1E60 0%, #0D0F2B 52.17%, rgba(8, 9, 22, 0.97) 99.48%);
+    min-height: 90dvh;
+    overflow: hidden;
+
+}
+.profile-body {
+    background: radial-gradient(27.05% 32.66% at 49.24% 0.54%, #1A1E60 0%, #0D0F2B 52.17%, rgba(8, 9, 22, 0.97) 99.48%);
+}
+
+:root {
+
+}

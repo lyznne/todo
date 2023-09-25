@@ -5,10 +5,23 @@
                 <h1 class="gradient-text">todo -it</h1>
             </a>
         </div>
+        
+        {% if user.is_authenticated %}
+        
+        
+        <div class="navbar-signout">
+
+            <a href="{% url 'signout' %}">
+                <button>sign out </button>
+            </a>
+        </div>
+        {% else %}
         <div class="navbar-signup">
+
             <a href="{% url 'signup' %}">
                 <button>sign up</button>
             </a>
         </div>
+        {% endif %}
     </div>
 </nav>

@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
+{% load static %}
 
 {% block content %}
+<!-- {% include 'base/singleTask.html' %} -->
 
 {% include 'partials/top.html' %}
 
@@ -9,12 +11,15 @@
 <main>
     <div class="main-container">
         {% include 'partials/aside.html' %}
+        
         <div class="task-container">
             <div class="user-component">
                 <div class="user-greeting">
                     <div class="boxy"></div>
                     <div class="username">
-                        <h2>Hello, <span>Enos lyznne</span></h2>
+                        {% if user.is_authenticated %} 
+                        <h2>Hello, <span>{{ user.username }} </span></h2>
+                        {% endif %}
                         <p>good day,👋 </p>
                     </div>
                 </div>
@@ -141,16 +146,7 @@
                                     </div>
                                     <div class="project-box-bottom">
                                         <div class="time">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                                viewBox="0 0 25 25" fill="none">
-                                                <path
-                                                    d="M12.6944 22.2952C18.2172 22.2952 22.6944 17.818 22.6944 12.2952C22.6944 6.77232 18.2172 2.29517 12.6944 2.29517C7.17155 2.29517 2.6944 6.77232 2.6944 12.2952C2.6944 17.818 7.17155 22.2952 12.6944 22.2952Z"
-                                                    stroke="#E1E0FF" stroke-opacity="0.85" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M12.6944 6.29517V12.2952L16.6944 14.2952" stroke="#E1E0FF"
-                                                    stroke-opacity="0.85" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
+                                            <img src="{% static '/assets/svg/time.svg' %}" alt="">
                                             <p>mon 7.00 AM</p>
                                         </div>
                                         <div class="no-of-task">
@@ -241,31 +237,187 @@
                         <div class="single-task-top">
                             <div class="single-heading">
                                 <h1>To do </h1>
-                            <span>200</span>
+                                <span>200</span>
+                            </div>
+                            <div class="percentage">
+                                75 %
                             </div>
                             <div class="add-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 5V19" stroke="#00FF1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 12H19" stroke="#00FF1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M12 5V19" stroke="#00FF1A" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M5 12H19" stroke="#00FF1A" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
                                 <span>add a new single todo task</span>
                             </div>
                         </div>
                         <div class="single-task-container">
                             <div class="single-task-box">
-                                <input type="checkbox" id="complete-task">
-                                <p>coding and finishing repo commits.</p>
+                                <div class="checkbox-task">
+                                    <input type="checkbox" name="status" id="status">
+                                    <p>coding and finishing repo commits.</p>
+                                </div>
                                 <div class="delete">
-
+                                    <img src="{% static '/assets/svg/del.svg' %}" alt="">
                                 </div>
                             </div>
-                            {% include 'partials/calendar.html' %}
-
+                            <div class="single-task-box">
+                                <div class="checkbox-task">
+                                    <input type="checkbox" name="status" id="status">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente
+                                        quaerat aliquam praesentium, nisi recusandae exercitationem doloribus officia,
+                                        in magnam inventore maxime dolore quia possimus!</p>
+                                </div>
+                                <div class="delete">
+                                    <img src="{% static '/assets/svg/del.svg' %}" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
 
                     <section id="completed-tasks" class="completed-tasks">
+                        <div class="complete-task-content">
+                            <div class="complete-task-top">
+                                <h1>Completed tasks</h1>
+                                <span>20 tasks and 10 categories</span>
+                            </div>
+
+                            <div class="tab-task">
+                                <div class="tab-buttons">
+                                    <button class="tab-button active">Tasks</button>
+                                    <button class="tab-button">Categories</button>
+                                </div>
+
+                                <div class="tab-content" id="tab-content">
+                                    <div class="complete-task-container active">
+                                        <div class="complete-box">
+                                            <div class="boxy"></div>
+                                            <p>learnign kubernetes and docker images and runnign vm in linux server </p>
+                                            <div class="complete-box-bottom">
+                                                <div class="time-finished">
+                                                    <img src="{% static '/assets/svg/time.svg' %}" alt="">
+
+                                                    <p>finished on sep 12:00 P </p>
+                                                </div>
+                                                <form action="#" class="delete-task">
+                                                    <button class="delete" type="submit"> <img
+                                                            src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="complete-box">
+                                            <div class="boxy"></div>
+                                            <p>learnign kubernetes and docker images and runnign vm in linux server </p>
+                                            <div class="complete-box-bottom">
+                                                <div class="time-finished">
+                                                    <img src="{% static '/assets/svg/time.svg' %}" alt="">
+
+                                                    <p>finished on sep 12:00 P </p>
+                                                </div>
+                                                <form action="#" class="delete-task">
+                                                    <button class="delete" type="submit"> <img
+                                                            src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="complete-box">
+                                            <div class="boxy"></div>
+                                            <p>learnign kubernetes and docker images and runnign vm in linux server </p>
+                                            <div class="complete-box-bottom">
+                                                <div class="time-finished">
+                                                    <img src="{% static '/assets/svg/time.svg' %}" alt="">
+
+                                                    <p>finished on sep 12:00 P </p>
+                                                </div>
+                                                <form action="#" class="delete-task">
+                                                    <button class="delete" type="submit"> <img
+                                                            src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="complete-categories">
+                                        <div class="category-complete">
+                                            <div class="category-box">
+                                                <span class="circle"></span>
+                                                <a href="#">Home</a>
+                                                <div class="category-bottom">
+                                                    <p>8 tasks</p>
+
+                                                    <form action="#" class="delete-category">
+                                                        <button class="delete" type="submit"> <img
+                                                                src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="category-box">
+                                                <span class="circle"></span>
+                                                <a href="#">Home</a>
+                                                <div class="category-bottom">
+                                                    <p>8 tasks</p>
+
+                                                    <form action="#" class="delete-category">
+                                                        <button class="delete" type="submit"> <img
+                                                                src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="category-box">
+                                                <span class="circle"></span>
+                                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                                                <div class="category-bottom">
+                                                    <p>8 tasks</p>
+
+                                                    <form action="#" class="delete-category">
+                                                        <button class="delete" type="submit"> <img
+                                                                src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="category-box">
+                                                <span class="circle"></span>
+                                                <a href="#">Lorem, ipsum dolor.</a>
+                                                <div class="category-bottom">
+                                                    <p>8 tasks</p>
+
+                                                    <form action="#" class="delete-category">
+                                                        <button class="delete" type="submit"> <img
+                                                                src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="category-box">
+                                                <span class="circle"></span>
+                                                <a href="#">Lorem ipsum dolor sit.</a>
+                                                <div class="category-bottom">
+                                                    <p>8 tasks</p>
+
+                                                    <form action="#" class="delete-category">
+                                                        <button class="delete" type="submit"> <img
+                                                                src="{% static '/assets/svg/del.svg' %}" alt="">
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </section>
                 </div>
             </div>
