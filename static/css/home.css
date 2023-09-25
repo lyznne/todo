@@ -168,10 +168,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .5s ease;
 }
 
 .top .top-container .user-info:hover .user-details {
     display: block;
+    
 }
 
 .top .top-container .user-info {
@@ -193,6 +195,7 @@
     width: auto;
     min-width: 200px;
     display: none;
+    transition: display .4s ease;
 }
 
 .top .top-container .user-details span {
@@ -273,6 +276,7 @@ main {
 .tasks,
 .add-task,
 .settings,
+.signout,
 .menu {
     display: flex;
     align-items: center;
@@ -281,7 +285,7 @@ main {
 
 }
 
-.aside .aside-component .aside-box .settings {
+.aside .aside-component .bottom-aside {
     margin-bottom: 2.5rem;
 }
 
@@ -707,7 +711,7 @@ main {
 .single-tasks .single-task-top .add-icon span {
     position: absolute;
     bottom: 2%;
-    /* right: 100%; */
+    right: 100%;
     transform: translate(-2%, -2%);
     padding: 4px 16px;
     background: #080916a4;

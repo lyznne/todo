@@ -33,8 +33,19 @@ nav {
 
 }
 
-
-
+.navbar .navbar-signout button {
+    padding: 4px 14px;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 4px;
+    background: rgb(241, 104, 104);
+    color: #fffffff3;
+    border: 0;
+    letter-spacing: .4px;   
+}
+.navbar .navbar-signout button:hover {
+    color: #ffffff50;
+}
 /* hero header css  */
 .header {
     padding: 2rem 4rem;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
     <link rel="stylesheet" href="{% static '/css/index.css' %}">
     <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" href="{% static '/css/global.css' %}">
 
 
     <!-- link to js -->
@@ -23,7 +24,7 @@
 </head>
 
 <body>
-
+    {% include 'base/loading.html' %} 
     {% block content %} 
 
     {% endblock content %}

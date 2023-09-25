@@ -50,7 +50,7 @@
                 <span></span>
                 <div class="notification-content" id="notification-content">
                     <div>
-                        <a href="#">
+                        <a href="{% url 'profile' %}">
                             <p>let's finish setting up your profile info</p>
 
                         </a>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="{% url 'profile' %}">
                             <p>let's finish setting up your profile info</p>
 
                         </a>
@@ -101,7 +101,9 @@
                 {% if user.is_authenticated %}
                 <div class="user-details">
                     <div class="user">
-                        <p>{{ user.username }} <span>(you)</span></p>
+                        <a href="{% url 'profile' %}">
+                            <p>{{ user.username }} <span>(you)</span></p>
+                        </a>
                     </div>
                 </div>
                 {% endif %}

@@ -3,88 +3,136 @@
 {% load static %}
 
 {% block content %}
-{% include 'partials/aside.html' %}
+{% include 'partials/navbar.html' %}
+
+<div class="profile-body ">
+    <div class="profile-component">
+        <div class="profile-heading">
+            {% if user.is_authenticated %}
+            <h1> welcome back , <span>{{ user.username }}</span></h1>
+            {% endif %}
+        </div>
+        <div class="profile-container">
+            <div class="profile-content">
+                <div class="personal-details">
+                    <h1>Your personal details</h1>
+                    <form action="#">
+                        <label for="username-update">your username as it will show on the project page.</label>
+                        <input type="text" id="username" value="enos muthiani">
+                        <label for="bio">add bio,</label>
+                        <textarea name="bio" id="bio" cols="30" rows="10"
+                            placeholder=" tell us something about youself"></textarea>
+                        <button type="submit">update profile</button>
+                    </form>
+                </div>
+                <div class="update-password">
+                    <h1>Security</h1>
+                    <form action="#">
+                        <label for="password">Your current password</label>
+                        <input type="password" name="current-password">
+                        <label for="password">Your new password</label>
+                        <input type="password" name="new-password">
+                        <label for="password">Repeat new password</label>
+                        <input type="password" name="new-conf-password">
+                        <button>update password</button>
+                        <a href="#">forgot password <span>--></span></a>
+                    </form>
+                </div>
+                <div class="delete-account">
+                    <h1>Delete Account </h1>
+                    <form action="#">
+                        <p>deleting your account means that all your projects and task will be deleted!</p>
+                        <button>delete account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
-    .aside {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 280px; /* Adjust the width as needed */
-    height: 100vh;
-    backdrop-filter: blur(20px);
-    background: #080916e1;
-    border-right: 2px solid #b9b1ff1c;
-   
-}
-
-/* Style for menu item icons and text */
-.aside-box {
-    display: flex;
-    align-items: center;
-    padding: 6px 20px;
-    transition: background 0.2s ease;
-}
-
-/* Active menu item styles */
-.aside-box.active {
-    background: #0a0b2554;
-}
-
-/* Icon and text styles */
-.aside-box a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: rgba(225, 224, 255, 0.83);
-}
-
-.aside-box a svg {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    fill: currentColor;
-}
-
-/* Responsive styles for smaller screens */
-@media screen and (max-width: 768px) {
-    .aside {
-        width: 60px; /* Adjust the collapsed width */
+    .profile-component {
+        margin: 1rem 8rem;
+        border-right: 2px solid #b9b1ff1c;
+        border-left: 2px solid #b9b1ff1c;
+        color: #FFF;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Hide text when collapsed */
-    .aside-box span {
-        display: none;
+    .profile-component .profile-heading {
+        margin: 1rem 0;
     }
 
-    /* Adjust padding for the menu icon */
-    .menu {
-        padding: 6px;
-    }
-}
+    .profile-component .profile-heading h1 {
+        font-size: 20px;
+        letter-spacing: .3px;
+        line-height: 32px;
 
+    }
+
+    .profile-component .profile-heading span {
+        font-weight: 500;
+        letter-spacing: .4px;
+
+        text-transform: capitalize;
+    }
+
+    .profile-component form {
+        display: flex;
+        flex-direction: column;
+        align-self: start;
+    }
+
+    .profile-component form textarea,
+    .profile-component form input {
+        padding: 6px 14px;
+        font-size: 18px;
+        color: #ffffffd2;
+        background: #08091667;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+        border: 0;
+        outline: 3px solid #ffffff50;
+
+    }
+    .profile-component form textarea:focus,
+    .profile-component form input:focus{
+        border: 1px solid #ffffffab;
+    }
+
+    .profile-component form button {
+        margin: 2rem 0 1rem 0;
+        padding: 4px 14px;
+        font-size: 18px;
+        line-height: 28px;
+        border-radius: 4px;
+        background: rgb(20, 157, 220);
+        color: #fffffff3;
+        letter-spacing: .4px;
+       
+    }
+
+    .profile-component .delete-account {
+        outline: 2px solid rgba(241, 104, 104, 0.87);
+        border: 1px solid rgb(241, 104, 104);
+        padding: .5rem 1rem;
+        border-radius: 10px;
+    }
+
+    .profile-component .delete-account form button {
+        padding: 4px 14px;
+        font-size: 18px;
+        line-height: 28px;
+        border-radius: 4px;
+        background: rgb(241, 104, 104);
+        color: #fffffff3;
+        border: 0;
+        letter-spacing: .4px;
+    }
 </style>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
-    const asideBoxes = document.querySelectorAll('.aside-box');
 
-    // Toggle the aside width when clicking the menu icon
-    menu.addEventListener('click', () => {
-        const aside = document.querySelector('.aside');
-        aside.classList.toggle('collapsed');
-    });
-
-    // Highlight the active menu item based on the current URL
-    asideBoxes.forEach((box) => {
-        const link = box.querySelector('a');
-        const url = link.getAttribute('href');
-        if (window.location.pathname === url) {
-            box.classList.add('active');
-        }
-    });
-});
-
-</script>
 {% endblock content %}

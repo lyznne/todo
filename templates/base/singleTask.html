@@ -1,0 +1,78 @@
+<div class="overlay">
+    <div class="single-task-container">
+        <h1>Add a single todo tasks.</h1>
+        <form action="#" id="single-task">
+            <input type="text" id="single-task-input" name="todoTask" placeholder="todo ..">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19" stroke="#E1E0FF" stroke-opacity="0.85" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M5 12H19" stroke="#E1E0FF" stroke-opacity="0.85" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                add</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .overlay {
+        z-index: 9999;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #080916a2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .overlay .single-task-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: auto;
+        /* max-width: 500px; */
+        background: #9fa1b1ab;
+        border-radius: 4px;
+        height: 80px;
+        padding: 1rem 2rem;
+    }
+
+    .overlay .single-task-container form {
+        display: flex;
+        align-items: center;
+    }
+
+    .overlay .single-task-container form input {
+        padding: 6px 14px;
+        font-size: 16px;
+        color: #FFF;
+        background: #08091693;
+        border-radius: 4px 0 0 4px;
+        transition: all .2s ease-in;
+        border: 0;
+        height: 36px;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .overlay .single-task-container form button {
+        padding: 6px 14px;
+        height: 36px;
+        font-size: 16px;
+        border-radius: 0 4px 4px 0;
+        background: rgba(1, 147, 214, 0.753);
+        color: #fffffff3;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
