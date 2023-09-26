@@ -11,13 +11,13 @@
 <main>
     <div class="main-container">
         {% include 'partials/aside.html' %}
-        
+
         <div class="task-container">
             <div class="user-component">
                 <div class="user-greeting">
                     <div class="boxy"></div>
                     <div class="username">
-                        {% if user.is_authenticated %} 
+                        {% if user.is_authenticated %}
                         <h2>Hello, <span>{{ user.username }} </span></h2>
                         {% endif %}
                         <p>good day,👋 </p>
@@ -178,7 +178,7 @@
                         </div>
                     </div>
 
-                    <div class="categories">
+                    <div class="categories" id="#categories">
                         <div class="category-content">
                             <div class="category-top">
                                 <h2>categories</h2>
@@ -233,15 +233,16 @@
 
 
 
-                    <div class="single-tasks">
+                    <div class="single-tasks" id="single-tasks">
                         <div class="single-task-top">
                             <div class="single-heading">
                                 <h1>To do </h1>
-                                <span>200</span>
+                                <span>{{ total_tasks }}</span>
                             </div>
                             <div class="percentage">
-                                75 %
+                                {{ completion_percentage }} %
                             </div>
+                            
                             <div class="add-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
@@ -254,26 +255,31 @@
                             </div>
                         </div>
                         <div class="single-task-container">
-                            <div class="single-task-box">
-                                <div class="checkbox-task">
-                                    <input type="checkbox" name="status" id="status">
-                                    <p>coding and finishing repo commits.</p>
-                                </div>
-                                <div class="delete">
-                                    <img src="{% static '/assets/svg/del.svg' %}" alt="">
-                                </div>
+                            <div class="single-task-box-form">
+                                <form action="{% url 'single_task' %}" method="post" id="single-task-form">
+                                    {% csrf_token %}
+                                    <input type="text" name="single-task-name">
+                                    <button type="submit">add</button>
+                                </form>
                             </div>
-                            <div class="single-task-box">
-                                <div class="checkbox-task">
-                                    <input type="checkbox" name="status" id="status">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente
-                                        quaerat aliquam praesentium, nisi recusandae exercitationem doloribus officia,
-                                        in magnam inventore maxime dolore quia possimus!</p>
+                            {% for singleTask in singleTasks %}
+                            <form method="post" action="{% url 'del_single_task' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="task_id" value="{{ singleTask.id }}">
+                                <div class="single-task-box">
+                                    <div class="checkbox-task">
+                                        <input type="checkbox" name="status" id="status" {% if singleTask.status %}checked{% endif %}>
+                                        <p>{{ singleTask.singletask_name }}</p>
+                                    </div>
+                                    <div class="delete">
+                                        <button type="submit" class="delete-button">Delete</button>
+                                    </div>
                                 </div>
-                                <div class="delete">
-                                    <img src="{% static '/assets/svg/del.svg' %}" alt="">
-                                </div>
-                            </div>
+                            </form>
+                            {% endfor %}
+
+
+
                         </div>
                     </div>
 

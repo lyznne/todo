@@ -659,6 +659,7 @@ main {
 /* /// single tasks css  */
 .single-tasks {
     margin-top: 2rem;
+    z-index: 2;
 }
 
 .single-tasks .single-task-top {
@@ -718,7 +719,7 @@ main {
     background: #080916a4;
     color: #E1E0FF;
     border-radius: 5px;
-    text-wrap: nowrap;
+    white-space: nowrap;
     display: none;
 }
 
@@ -732,7 +733,39 @@ main {
     display: flex;
     justify-content: space-between;
 }
-
+.single-tasks .single-task-box-form {
+    color: #E1E0FF;
+}
+.single-tasks .single-task-box-form form {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    outline: 1.75px solid #fffffff3;
+    border-radius: 4px;  
+    margin-top: 10px;
+}
+.single-tasks .single-task-box-form input {
+    padding: 6px 14px;
+    font-size: 16px;
+    color: #FFF;
+    background: #0809164b;
+    border-radius: 4px 0 0 4px;
+    transition: all .2s ease-in;
+    border: 0;
+    height: 46px;
+    width: 100%;
+}
+.single-tasks .single-task-box-form button { 
+    padding: 6px 14px;
+    height: 46px;
+    font-size: 16px;
+    width: 20%;
+    border-radius: 0 4px 4px 0;
+    background: rgba(1, 147, 214, 0.753);
+    color: #fffffff3;
+    
+}
 .single-tasks .single-task-box .checkbox-task {
     display: flex;
     align-items: center;
@@ -760,6 +793,15 @@ main {
 }
 
 #completed-tasks * {
+    z-index: 1;
+}
+#single-tasks * {
+    z-index: 1;
+}
+#categories * {
+    z-index: 1;
+}
+.categories * {
     z-index: 1;
 }
 

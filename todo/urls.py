@@ -23,10 +23,10 @@ urlpatterns = [
     path('', include('core.urls')),
 ]
 
-from django.conf import settings
-from django.conf.urls.static import static
+# from django.conf import settings
+# from django.conf.urls.static import static
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # handler404()
 handler404 = 'core.views.custom_404'

@@ -1,0 +1,444 @@
+/* ================================
+    profile css 
+   =================================*/
+.box-line {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    height: 80%;
+    margin-left: -1px;
+    transition: all .4s ease;
+    border-radius: 0 4px 4px 0;
+}
+
+.profile-body {
+    background: radial-gradient(27.05% 32.66% at 49.24% 0.54%, #1A1E60 0%, #0D0F2B 52.17%, rgba(8, 9, 22, 0.97) 99.48%);
+}
+
+
+.profile-component {
+    margin: 1rem 8rem;
+    border-right: 2px solid #b9b1ff1c;
+    border-left: 2px solid #b9b1ff1c;
+    color: #FFF;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-component .profile-heading {
+    position: relative;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    background: #08091623;
+    padding: .75rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-width: 30rem; */
+    width: 80%;
+}
+
+.profile-component .profile-heading:hover {
+    outline: 1px solid rgba(255, 238, 4, 0.3);
+}
+
+.profile-component .profile-heading-body .projects p {
+    background-color: rgba(1, 146, 213, 0.145);
+    padding: .5rem 1.25rem;
+    border-radius: 20px;
+    color: #0193d6;
+    font-size: 18px;
+}
+
+.profile-component .profile-heading-body .tasks p {
+    background-color: rgba(210, 105, 30, 0.171);
+    padding: .5rem 1.25rem;
+    border-radius: 20px;
+    color: chocolate;
+    font-size: 18px;
+}
+
+
+.profile-component .profile-heading-body .progress-container .progress-bg {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#080916 0%, #080916 50%, transparent 50%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 5px rgba(8, 9, 22, 0.2), inset -3px -3px 5px rgba(8, 9, 22, 0.5);
+}
+
+.profile-component .profile-heading-body .progress-container .progress-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%);
+    background: conic-gradient(#ffee04 0%, chocolate 100%);
+    border-radius: 50%;
+    transform: rotate(90deg);
+}
+
+.profile-component .profile-heading-body .progress-container .progress-bar p {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 30px;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.profile-component .profile-heading-body .progress-container {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-component .profile-content .personal-details:hover {
+    outline: 2px solid rgba(1, 147, 214, 0.3);
+
+}
+
+.profile-component .profile-content .personal-details .box-line {
+    border-left: 4px solid #0193d6;
+
+}
+
+.profile-component .profile-heading .box-line {
+    border-left: 4px solid #ffee04;
+
+}
+
+.profile-component .profile-content .update-password .box-line {
+    border-left: 4px solid #2180da;
+
+}
+
+.profile-component .profile-content .delete-account .box-line {
+    border-left: 4px solid crimson;
+}
+
+.profile-component .profile-content .update-password:hover {
+    outline: 2px solid rgba(32, 128, 217, 0.3);
+}
+
+.profile-component .profile-content .delete-account:hover {
+    outline: 2px solid rgba(178, 34, 34, 0.39);
+}
+
+
+.profile-component .profile-content .delete-account {
+    color: crimson;
+}
+
+
+
+.profile-body .profile-component .profile-container .form-input-field {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: .5rem;
+}
+
+.profile-component .profile-content .update-password .update-password-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+
+.profile-component .profile-content .update-password .link {
+    margin-bottom: 1.2rem;
+    color: #a4d4e78f;
+
+}
+
+.profile-component .profile-content .update-password .link:hover {
+    color: #a4d4e73f;
+    text-decoration: underline;
+
+}
+
+.profile-component .profile-content .personal-details,
+.profile-component .profile-content .delete-account,
+.profile-component .profile-content .update-password {
+    position: relative;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    background: #08091623;
+    padding: .75rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+
+
+.profile-component .profile-heading h1 {
+    font-size: 20px;
+    letter-spacing: .3px;
+    line-height: 32px;
+}
+
+.profile-component .profile-heading span {
+    font-weight: 500;
+    letter-spacing: .4px;
+
+    text-transform: capitalize;
+}
+
+.profile-component .profile-heading .profile-heading-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .5rem;
+    width: 100%;
+    position: relative;
+}
+
+
+
+.profile-component .profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%
+}
+
+.profile-component .profile-content .title-heading {
+    font-size: 20px;
+    letter-spacing: .3px;
+    line-height: 32px;
+}
+
+.profile-body .profile-component .profile-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.profile-body .profile-component .profile-container form textarea {
+    resize: none;
+    padding: 6px 14px;
+    font-size: 18px;
+    color: #ffffffd2;
+    background: #08091667;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 0;
+    outline: 3px solid #ffffff50; 
+    min-width: 300px;
+}
+
+
+
+
+
+
+.profile-body .profile-component .profile-container form textarea:focus,
+.profile-body .profile-component .profile-container form input:focus {
+    border: 1px solid #ffffffab;
+}
+
+.profile-body .profile-component .profile-container form input {
+    padding: 6px 14px;
+    font-size: 18px;
+    color: #ffffffd2;
+    background: #08091667;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 0;
+    outline: 3px solid #ffffff50;
+
+}
+
+.profile-body .profile-component .profile-container button {
+    padding: 4px 14px;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 4px;
+    border: 0;
+    letter-spacing: .4px;
+    width: 70%;
+    color: #fffffff3;
+    background: rgb(20, 157, 220);
+    place-self: center;
+
+}
+
+
+
+.profile-component .profile-content .personal-details .profile-email-field input {
+    display: none;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .profile-email-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .show-email p {
+    width: auto;
+    max-width: 55%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .show-email {
+    display: flex;
+    background-color: rgba(1, 146, 213, 0.045);
+    align-items: center;
+    border-radius: 40px;
+    padding: 0 1rem;
+    color: #e1e0ff;
+
+
+}
+
+
+.profile-component .profile-content .personal-details .profile-email-field .email-field {
+    margin-top: .5rem;
+    position: relative;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .email-field p {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    background-color: rgba(1, 146, 213, 0.45);
+    padding: .2rem .5rem;
+    border-radius: 4px;
+    color: #fffffff3;
+    margin-left: 1rem;
+    white-space: nowrap;
+    z-index: 2;
+    display: none;
+    transition: all .4s ease;
+
+
+
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .email-field {
+    margin-left: 2rem;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .email-field:hover p {
+    display: block;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .email-field #add-email {
+    width: 45px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: #0193d6b9;
+    cursor: pointer;
+}
+
+.profile-component .profile-content .personal-details .profile-email-field .show-email span {
+    background-color: rgba(1, 146, 213, 0.145);
+    padding: .5rem 1rem;
+    border-radius: 40px;
+    color: #0193d6;
+    font-size: 18px;
+    margin-left: 1rem;
+
+    /* place-self: flex-end; */
+}
+
+.profile-component .profile-content .personal-details .bio-box {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 80%;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(2px);
+    background-color: rgba(1, 146, 213, 0.021);
+    color: #e1e0ff;
+    border-radius: 10px;
+}
+
+.profile-component .profile-content .personal-details .bio-box label {
+    margin-bottom: 10px;
+    padding: .2rem .5rem;
+}
+.profile-component .profile-content .personal-details .bio-box .with-bio span {
+    background-color: rgba(1, 147, 214, 0.145);
+    padding: .5rem .5rem;
+    padding-bottom: .3rem;
+    border-radius: 0  0 50px  0;
+    color: lightskyblue;
+    font-size: 16px;
+    margin-bottom: 1.45rem ;
+    padding-right: 1.5rem;
+}
+
+
+
+
+.profile-component .profile-content .personal-details .bio-box .with-bio,
+.profile-component .profile-content .personal-details .bio-box .without-bio {
+    padding: .5rem 1rem;
+    font-size: 18px;
+    /* width: 50%; */
+    height: 100%;
+
+}
+
+.profile-component .profile-content .delete-account .delete-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-component .profile-content .delete-account .delete-info p {
+    color: rgba(220, 20, 60, 0.85);
+
+}
+
+.profile-component .profile-content .delete-account button {
+    background: firebrick;
+    color: #fffffff3;
+    place-self: center;
+    margin: .5rem 0;
+
+}
+
+.profile-component .profile-content .delete-account .delete-info svg path {
+    stroke: crimson;
+    stroke-opacity: .85;
+}
+
+/* =====================================
+    media queries for profile html css 
+=======================================
+*/
+
+
+
+/* small devices */
+@media screen and (max-width: 500px) {}
+
+
+/* medium devices */
+@media screen and (max-width: 500px) {}
